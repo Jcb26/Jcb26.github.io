@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+	#tom{
+		width:800px;
+		height:800px;
+		background-color:grey;
+		position:absolute;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="tom"></div>
+
+	<script type="text/javascript">
+
+		var box = document.getElementById("tom");
+
+
+
+
+		box.style.backgroundColor = "rgb(200,200,100)";
+
+		document.addEventListener(
+			"mousemove", function(event){
+				console.log(event.clientX, event.clientY)
+				box.style.backgroundColor = "rgb("+ event. 
+					clientX + "," + "0"+ ","+ event.clientY + ")"
+			}
+
+			)
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+        h1{
+            font-family:Times New Roman;
+            font-size:12;
+            color:red;
+        }
+
+        p{
+            font-family: Times New Roman;
+            font-size:4;
+            color:red;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1> Square Quilt Project <h1>
+
+<br><br>
+
+<p> <!-- If you'd like a description, feel free to put in your description here! Add your styling above in the curly brackets after "p" above --> This is my square quilt project <p>
+
+
+<script type="text/javascript">
+
+//For all of your media, to use this, label each file  with numbers (eg.1.jpg, 2.jpg) and keep them in the same folder as this html file. If they are not jpgs, change the extension "jpg" in the recipe below (line 25) to whatever file type they are.  
+
+//Below is the recipe to make the squares appear on the page//
+    
+    function makeSquare (x) {
+
+            var square = document.createElement('div');
+                        document.body.appendChild(square);
+            square.style.width = "100px";
+            square.style.height = "100px";
+            square.style.display = "inline-block";
+            square.style.margin = "8px";
+            square.style.backgroundRepeat = "no-repeat";
+            square.style.border = "4px";
+            square.style.backgroundColor = "red";
+
+            square.style.backgroundImage = "url(" + x + ".jpg)";
+
+            square.style.backgroundSize = "contain";
+            square.style.id = "square" + x;};
+
+    for (var i = 0; i < 48; i++) 
+    { makeSquare(i);}
+</script>
+</body>
+</html>

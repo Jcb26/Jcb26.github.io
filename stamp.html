@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.puppies {
+			width:100px;
+			height:100px;
+			background-size:contain;
+			background-position:center;
+			background-repeat:no-repeat;
+			border:1px solid black;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="puppies"></div>
+
+
+	<div id="golden" class="puppies"></div>
+
+	<div class="puppies"></div>
+
+
+	<script type="text/javascript">
+
+		function makepuppy (){
+			counter = counter +1
+
+			let puppy = document.createElement("div");
+
+			document.body.appendChild(puppy);
+
+			puppy.classList.add("puppies");
+
+			puppy.innerText = counter;
+			
+
+		}
+
+				setInterval(makePuppy,100)
+
+
+		
+		explain()
+
+	</script>
+
+</body>
+</html>
