@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retired Soccer Hall of Fame </title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #flashcardContainer {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+        }
+        .flashcard {
+            width: 400px;
+            height: 400px;
+            border: 1px black;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font:times new roman;
+            font-size:12;
+        }
+
+        .flashcard img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flashcard .name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .flashcard:hover .name {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/ronaldo-luis-nazario-de-lima-1472042256-5977.jpg?lm=1483606131" alt="Player 1">
+            <div class="name">Ronaldo Nazario</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/luis-figo-inter-1658307648-88731.jpg?lm=1658307681" alt="Player 2">
+            <div class="name">Luis Figo</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt3a48501789cdf113/60db790b47339c0fc01c188c/3e947186d512164cf8dbe0987a865dd2b714eea6.png?auto=webp&format=pjpg&width=3840&quality=60" alt="Player 3">
+            <div class="name"> David Beckham</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://media.cnn.com/api/v1/images/stellar/prod/170420144636-xavi-hernandez-of-fc-barcelona-tease.jpg?q=w_4256,h_2832,x_0,y_0,c_fill" alt="Player 1">
+            <div class="name">Xavi</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://dailypost.ng/wp-content/uploads/2013/10/aleessandro-nesta.jpg">
+            <div class="name">Alessandro Nesta</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://cdn.theathletic.com/app/uploads/2020/04/08095348/ZIDANE-juventus.jpg" alt="Player 3">
+            <div class="name">Zinedine Zidane</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blta0b651a34b44d5fc/60dbd8dc22d24e38a38b5f26/f32a20235b7c8a97cf370120f607bbb8a78f1dbe.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Player 1">
+            <div class="name">Ronaldinho</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/fabio-cannavaro-italien-1529305566-16154.jpg?lm=1529305642" alt="Player 2">
+            <div class="name">Fabio Cannavaro</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://m.media-amazon.com/images/M/MV5BZTA2Y2RlZGEtZjU1Ny00NjM3LTg3ZTYtY2NkZTA5NjVjMTBiXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_FMjpg_UX1000_.jpg" alt="Player 3">
+            <div class="name">Carles Puyol</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://images.squarespace-cdn.com/content/v1/5771ad50725e257fef5640c4/1481001973171-IYZRSNMIO2YGHL0CKJTH/Maldini" alt="Player 1">
+            <div class="name">Paolo Maldini</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/javier-zanetti-jubel-inter-2009-1592311048-41572.jpg?lm=1592311024">
+            <div class="name">Javier Zannetti</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://d3nfwcxd527z59.cloudfront.net/content/uploads/2020/06/13121742/Roberto-Carlos-Brazil-celebrates.jpg" alt="Player 3">
+            <div class="name">Roberto Carlos</div>
+        </div>
+    </div>
+
+    <script>
+        var flashcards = document.getElementsByClassName("flashcard");
+
+        var players = [
+            { name: "", images: ["", ""] },
+            { name: "", images: ["", ""] },
+            { name: "", images: ["", ""] }
+            { name: "Vinicius Jr.", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Federico Valverde", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Ronald Araujo", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+            { name: "Julian Alvarez", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Fran Garcia", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Erling Haaland", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+            { name: "Jamal Musiala", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Khvicha Kvaratshkelia", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Josko Gvardiol", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+        ];
+
+        function showName(index) {
+            flashcards[index].getElementsByClassName("name")[0].textContent = players[index].name;
+        }
+
+        function hideName(index) {
+            flashcards[index].getElementsByClassName("name")[0].textContent = "";
+        }
+
+        flashcards.forEach(function(flashcard, index) {
+            var images = players[index].images;
+
+            flashcard.addEventListener("mouseover", function() {
+                this.getElementsByTagName("img")[0].src = images[1];
+            });
+
+            flashcard.addEventListener("mouseout", function() {
+                this.getElementsByTagName("img")[0].src = images[0];
+            });
+        });
+    </script>
+    <a href="oldhof.html"> This is my next player hall of fame </a>
+</body>
+</html>

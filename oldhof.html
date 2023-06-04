@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retired Soccer Hall of Fame </title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #flashcardContainer {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+        }
+        .flashcard {
+            width: 400px;
+            height: 400px;
+            border: 1px black;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font:times new roman;
+            font-size:12;
+        }
+
+        .flashcard img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flashcard .name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .flashcard:hover .name {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://www.80scasualclassics.co.uk/blog/wp-content/uploads/2017/08/franz-beckenbauer-adidas-tracksuit-2222.jpeg" alt="Player 1">
+            <div class="name"> Franz Beckenbeaur</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://footballmakeshistory.eu/wp-content/uploads/2022/12/Michel_Platini1920x1280.jpg" alt="Player 2">
+            <div class="name">Michel Platini</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Eusebio_%281963%29.jpg" alt="Player 3">
+            <div class="name"> Eusebio</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://i.guim.co.uk/img/media/c195bf06cd9859e284ac6ebd0b3f49e7e6b18f79/0_0_1763_2048/master/1763.jpg?width=700&quality=85&auto=format&fit=max&s=1797c8812c0b4197a58544c1577f3c38" alt="Player 1">
+            <div class="name">Ferenc Puskas</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://digitalhub.fifa.com/transform/f74273d0-5e2e-457d-90dd-23d69324c6fd/Brazilian-legend-Pele">
+            <div class="name">Pelé</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://www.nationalfootballmuseum.com/wp-content/uploads/2015/05/Best_mpix_00248184.jpg" alt="Player 3">
+            <div class="name">George Best</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://static01.nyt.com/images/2020/12/01/opinion/01rotulo-01/01rotulo-01-mediumSquareAt3X.jpg" alt="Player 1">
+            <div class="name">Diego Maradona</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://i.guim.co.uk/img/media/2a9435926d21f60ae6eba37043d0596482133ddc/115_207_2133_1280/master/2133.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e49cbb29f152aa026428013b85596377" alt="Player 2">
+            <div class="name">Gerd Muller</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://www.thesun.co.uk/wp-content/uploads/2022/12/46db07b2-a74e-4525-a274-12a42bbe4649.jpg">
+            <div class="name">Roberto Baggio</div>
+        </div>
+    </div>
+    <div id="flashcardContainer">
+        <div class="flashcard" onmouseover="showName(0);" onmouseout="hideName(0);">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR2BtMWeRUd2l8J-ck8F8n2wjzY8ZXTBvS2wWIl5H2GR6sB7x_XJFd6vPTnfaVYHWutwZav4rYLohvVFCw">
+            <div class="name">Ruud Gullit</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(1);" onmouseout="hideName(1);">
+            <img src="https://m.media-amazon.com/images/M/MV5BN2MyZTY4ZjItNTVlNS00YjQxLThmMzktZTRiNGU2YzQyMTA4XkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_FMjpg_UX1000_.jpg">
+            <div class="name">Johan Cruyff</div>
+        </div>
+        <div class="flashcard" onmouseover="showName(2);" onmouseout="hideName(2);">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Di_stefano_argentina.jpg" alt="Player 3">
+            <div class="name">Alfredo Di Stefano</div>
+        </div>
+    </div>
+
+    <script>
+        var flashcards = document.getElementsByClassName("flashcard");
+
+        var players = [
+            { name: "", images: ["", ""] },
+            { name: "", images: ["", ""] },
+            { name: "", images: ["", ""] }
+            { name: "Vinicius Jr.", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Federico Valverde", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Ronald Araujo", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+            { name: "Julian Alvarez", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Fran Garcia", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Erling Haaland", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+            { name: "Jamal Musiala", images: ["https://i2-prod.mirror.co.uk/sport/football/news/article26698370.ece/ALTERNATES/s1200b/0_GettyImages-1390533623.jpg", "player1_2.jpg"] },
+            { name: "Khvicha Kvaratshkelia", images: ["https://www.fubo.tv/news/wp-content/uploads/2023/01/osimhen-manchester-united-transfer-rumour.jpg", "player2_2.jpg"] },
+            { name: "Josko Gvardiol", images: ["https://imageio.forbes.com/specials-images/imageserve/63fdcf91ec46bc6e91177975/FC-Barcelona-have-begun-to-experience-poor-results-without-Pedri-at-their-disposal-/960x0.jpg?format=jpg&width=960", "player3_2.jpg"] }
+        ];
+
+        function showName(index) {
+            flashcards[index].getElementsByClassName("name")[0].textContent = players[index].name;
+        }
+
+        function hideName(index) {
+            flashcards[index].getElementsByClassName("name")[0].textContent = "";
+        }
+
+        flashcards.forEach(function(flashcard, index) {
+            var images = players[index].images;
+
+            flashcard.addEventListener("mouseover", function() {
+                this.getElementsByTagName("img")[0].src = images[1];
+            });
+
+            flashcard.addEventListener("mouseout", function() {
+                this.getElementsByTagName("img")[0].src = images[0];
+            });
+        });
+    </script>
+</body>
+</html>

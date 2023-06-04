@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Best Players in the World (24 Under)</title>
+  <style>
+    body {
+      background-color:black;
+    }
+    #flashcardContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flip-card {
+      width: 200px;
+      height: 200px;
+      perspective: 1000px;
+      margin: 10px;
+      order: 0; /* Initial order */
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flip .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .flip-card-back {
+      background-color: #e9e9e9;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flip-card img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .flip-card:hover .flip-card-front::after {
+      content: attr(data-name);
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      background-color: blue;
+      color: #fff;
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="flashcardContainer">
+    <div class="flip-card" id="flipCard1">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" onclick="flipCard('flipCard1')" data-name="Player 1">
+          <img src="https://icdn.football-espana.net/wp-content/uploads/2023/03/BELLINGHAM2.jpeg" alt="Player 1">
+        </div>
+        <div class="flip-card-back">
+          <h3>Player 1</h3>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="flipCard2">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" onclick="flipCard('flipCard2')" data-name="Player 2">
+          <img src="player2.jpg" alt="Player 2">
+        </div>
+        <div class="flip-card-back">
+          <h3>Player 2</h3>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="flipCard3">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" onclick="flipCard('flipCard3')" data-name="Player 3">
+          <img src="player3.jpg" alt="Player 3">
+        </div>
+        <div class="flip-card-back">
+          <h3>Player 3</h3>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add more flip-cards here -->
+    
+  </div>
+
+  <script>
+    function flipCard(cardId) {
+      const card = document.getElementById(cardId);
+      card.classList.toggle('flip');
+
+      // Randomly change the order of the cards
+      const cards = document.getElementsByClassName('flip-card');
+      const orderArray = Array.from(cards).map((card) => card.style.order);
+      const randomOrderArray = orderArray.sort(() => Math.random() - 0.5);
+      
+      Array.from(cards).forEach((card, index) => {
+        card.style.order = randomOrderArray[index];
+      });
+    }
+  </script>
+</body>
+</html>

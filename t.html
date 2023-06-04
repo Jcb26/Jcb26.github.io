@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Description</title>
+  <style>
+    .image-container {
+      display: inline-block;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="image1" class="image-container">
+    <img src="image1.jpg" alt="Image 1" width="200" height="200">
+  </div>
+  <div id="image2" class="image-container">
+    <img src="image2.jpg" alt="Image 2" width="200" height="200">
+  </div>
+  <div id="image3" class="image-container">
+    <img src="image3.jpg" alt="Image 3" width="200" height="200">
+  </div>
+
+  <script>
+    function showImageDescription(imageId, name, description) {
+      var container = document.getElementById(imageId);
+      container.addEventListener('click', function() {
+        alert("Name: " + name + "\nDescription: " + description);
+      });
+    }
+
+    showImageDescription('image1', 'Image 1', 'This is the first image.');
+    showImageDescription('image2', 'Image 2', 'This is the second image.');
+    showImageDescription('image3', 'Image 3', 'This is the third image.');
+  </script>
+</body>
+</html>
